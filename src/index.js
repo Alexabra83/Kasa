@@ -4,6 +4,7 @@ import './index.css';
 import Home from './pages/Home';
 import LogementDetails from './pages/LogementDetails';
 import About from './pages/About';
+import ErrorPage from './pages/ErrorPage';
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
@@ -16,12 +17,16 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "logement-details",
+    path: "logement-details/:id",
     element: <LogementDetails />,
   },
   {
-    path: "a-propos",
+    path: "/a-propos",
     element: <About />,
+  },
+  {
+    path: "/error-page",
+    errorElement: <ErrorPage />,
   },
 ],
 );
