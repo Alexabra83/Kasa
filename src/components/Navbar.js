@@ -15,7 +15,7 @@ function Navbar() {
                 <p to="/">Acceuil</p>
             </li>
             <li>
-                <p to="/a-propos">A Propos</p>
+                <p to="/About">A Propos</p>
             </li>
         </ul>
       </NavLink>

@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 
 function StarRating ({rating}){
-  console.log(rating);
   return (
     <div className="star-rating">
       {
