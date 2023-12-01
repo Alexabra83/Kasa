@@ -7,18 +7,17 @@ function Navbar() {
   return (
     <header className='navbar'>
       <div className='navbar_logo'>
-        <img to='/' src={logo} alt='Kasa' />
+        <NavLink to="/"><img src={logo} alt='Kasa' /></NavLink>
       </div>
-      <NavLink>
-      <ul className="nav_list">
-            <li>
-                <p to="/">Acceuil</p>
-            </li>
-            <li>
-                <p to="/About">A Propos</p>
-            </li>
+      
+        <ul className="nav_list">
+          <li>
+            <NavLink to="/"><p>Acceuil</p></NavLink>
+          </li>
+          <li>
+            <NavLink to="/a-propos"><p>A Propos</p></NavLink>
+          </li>
         </ul>
-      </NavLink>
     </header>
   )
 }

@@ -1,0 +1,29 @@
+.error {
+  color: #FF6060;
+}
+
+.commun-error {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 200px;
+}
+
+.error span {
+  font-size: 288px;
+}
+
+.error h4 {
+  font-size: 36px;
+  margin: 30px 0;
+}
+
+.error a {
+  color: #FF6060;
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+.error p {
+  padding-top: 50px;
+}

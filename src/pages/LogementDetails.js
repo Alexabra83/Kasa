@@ -4,8 +4,10 @@ import Footer from "../components/Footer";
 import records from "../datas/logements.json"
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import StarRating from "../components/StarRating";
+import Collapse from "../components/Collapse";
 
 import "../styles/LogementDetails.css"
 import Main from "../components/Main";
@@ -24,36 +26,38 @@ function LogementDetails() {
   }, [id])
 
   const slideLeft = () => {
-    if (currentIndex === 0 ) {
-      setCurrentIndex (logement.pictures.length -1)
+    if (currentIndex === 0) {
+      setCurrentIndex(logement.pictures.length - 1)
     } else {
-      setCurrentIndex (currentIndex -1)
+      setCurrentIndex(currentIndex - 1)
     }
   }
 
   const slideRight = () => {
-    if (currentIndex === logement.pictures.length -1 ) {
-      setCurrentIndex (0)
+    if (currentIndex === logement.pictures.length - 1) {
+      setCurrentIndex(0)
     } else {
-      setCurrentIndex (currentIndex +1)
+      setCurrentIndex(currentIndex + 1)
     }
   }
 
-  
+
 
   return (
     <div className="logementdetail">
       <Navbar />
       <Main>
-        <img className="img-cover" src={logement.pictures[currentIndex]} alt="" />
-        <button onClick={slideLeft}><FontAwesomeIcon icon={faEnvelope} /></button>
-        <button onClick={slideRight}><FontAwesomeIcon icon={faEnvelope} /></button>
-        <p>{currentIndex +1} / {logement.pictures.length}</p>
+        <div className="carousel">
+          <img className="img-cover" src={logement.pictures[currentIndex]} alt="" />
+          <button className='chevronGauche' onClick={slideLeft}><FontAwesomeIcon icon={faChevronLeft} /></button>
+          <button className='chevronDroit' onClick={slideRight}><FontAwesomeIcon icon={faChevronRight} /></button>
+          <p className="compteurImages">{currentIndex + 1} / {logement.pictures.length}</p>
+        </div>
 
         <div className="detail-header">
           <div className="bloc-title">
             <h1>{logement.title}</h1>
-            
+
             <h4>{logement.location}</h4>
             <ul className="ul-tags">
               {logement.tags.map((tag, index) => {
@@ -75,13 +79,24 @@ function LogementDetails() {
         </div>
 
 
-        <div>
-          <p>Description</p>
-          <p>Profitez du charme de la vie parisienne dans un magnifique appartement.
-            A 3 minutes à pied du Canl Saint Martin, vous serez proche des transports,
-            mais également de nombreux commerces. L'appartement est tout équipé,
-            et possède également un parking pour ceux qui souhaitent se déplacer en voiture.</p>
-        </div>
+
+        <Collapse title="Description">Profitez du charme de la vie parisienne dans un magnifique appartement.
+          A 3 minutes à pied du Canl Saint Martin, vous serez proche des transports,
+          mais également de nombreux commerces. L'appartement est tout équipé,
+          et possède également un parking pour ceux qui souhaitent se déplacer en voiture.</Collapse>
+
+        <Collapse title="Equipements">
+          <ul>
+          {logement.equipments.map((equipment, i) => {
+            return (
+            <li key={i}>
+              {equipment}
+            </li>
+            )
+          })}
+          </ul>
+        </Collapse>
+
         <div>
           <p></p>
         </div>

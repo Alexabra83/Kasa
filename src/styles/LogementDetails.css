@@ -10,25 +10,62 @@
   box-shadow: 0px 0px 10px gray;
 }
 
-.detail-header{
+.compteurImages {
+  position: relative;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  text-align: center;
+  text-shadow: 0px 0px 5px black;
+}
+
+.carousel button {
+  border: none;
+  background-color: transparent;
+  display: hidden;
+  color: gray;
+}
+
+.chevronGauche {
+  position: absolute;
+  font-size: 100px;
+  inset: 0;
+  top: 40%;
+  cursor: pointer;
+  left: 0;
+}
+
+.chevronDroit {
+  position: absolute;
+  font-size: 100px;
+  inset: 0;
+  top: 40%;
+  cursor: pointer;
+  left: calc(100% - 50px);
+}
+
+.detail-header {
   display: flex;
   /*& > * {
   border: 1px solid red;
   }*/
 }
 
-.bloc-host{
+.bloc-host {
   margin-block: 0;
   margin-left: auto;
   color: #FF6060;
 }
-.bloc-host span{
+
+.bloc-host span {
   place-items: center;
 }
 
 .bloc-star {
   display: flex;
-  justify-content: center;
+  font-size: 30px;
+  width: 130px;
+  gap: 10px;
 }
 
 .bloc-host img {
