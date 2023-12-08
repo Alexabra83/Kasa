@@ -11,8 +11,12 @@ function Logements() {
         return (
           <div className="logement" key={id}>
             <NavLink to={"/logement-details/" + id}>
-              <img src={cover} alt={title} />
-              <figcaption><h3>{title}</h3></figcaption>
+              <figure className='logement-figure'>
+                <img src={cover} alt={title} className='logement-figure-img' />
+                <figcaption className='logement-figure-figcaption'>
+                  <h3 className='logement-figure-figcaption-title'>{title}</h3>
+                </figcaption>
+              </figure>
             </NavLink>
           </div>
         )

@@ -11,10 +11,6 @@
   padding: 50px;
 }
 
-.logements a {
-   text-decoration: none;
-}
-
 .logement {
   border-radius: 10px;
   transition: 0.3s;
@@ -24,25 +20,42 @@
 }
 
 .logement img {
-  width: 100%;
-  border-radius: 10px 10px 0px 0px;
-  height: 260px;
+  width: 340px;
+  height: 340px;
   object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.logement-figure {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 5px #0000002e;
+  margin-block: 0;
+  margin-inline: 0;
+  margin: 1rem;
+  border-radius: 0.5rem;
 }
 
 .logement figcaption {
-  display: flex;
-  height: 65px;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 142.6%;
-  margin: 0px 20px;
-  align-items: center;
-  overflow: hidden;
-  color: white;
+  position: absolute;
+  left: -15px;
+  bottom: 0px;
+  z-index: 1;
+  width: 110%;
+  height: 150px;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 13%, rgba(0, 212, 255, 0) 70%);
+  border-radius: 0 0 0.5rem 0.5rem;
 }
 
-.logement:hover {
-  box-shadow: 0px 0px 10px gray;
-  cursor: pointer;
+.logement-figure-figcaption-title {
+  color: white;
+  font-size: 18px;
+  width: 95%;
+  position: absolute;
+  left: 10px;
+  bottom: 0px;
+
 }
