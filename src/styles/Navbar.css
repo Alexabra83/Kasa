@@ -8,18 +8,27 @@
   width: 87%;
   height: 68px;
   color: #FF6060;
-  text-decoration: none;
 }
 
 .nav_list {
+  color: #FF6060;
   display: flex;
+  text-decoration: none;
 }
 
 .nav_list li {
-  text-decoration: none;
   color: #FF6060;
   list-style: none;
   padding: 30px;
   font-size: 25px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #FF6060;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
 }
 
