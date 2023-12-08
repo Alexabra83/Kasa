@@ -6,3 +6,6 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+img {
+  object-fit: cover;
+}

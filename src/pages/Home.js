@@ -4,6 +4,7 @@ import Banner from '../components/Banner'
 import Logements from "../components/Logements"
 import Footer from "../components/Footer"
 import Main from "../components/Main"
+import ImgBanner from "../assets/imgBannerAccueil.png"
 
 import "../styles/Home.css"
 
@@ -12,7 +13,7 @@ function Home() {
     <div>
       <Navbar />
       <Main>
-        <Banner />
+        <Banner title="Chez vous, partout et ailleurs" img={ImgBanner} />
         <Logements />
       </Main>
       <Footer />

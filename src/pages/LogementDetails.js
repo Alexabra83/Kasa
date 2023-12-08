@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer";
 import records from "../datas/logements.json"
@@ -8,11 +8,11 @@ import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import StarRating from "../components/StarRating";
 import Collapse from "../components/Collapse";
-
 import "../styles/LogementDetails.css"
 import Main from "../components/Main";
 
 function LogementDetails() {
+  const navigate = useNavigate();
   const { id } = useParams()
   const [logement, setLogement] = useState({
     pictures: [], host: {}, equipments: [], tags: []
@@ -21,8 +21,13 @@ function LogementDetails() {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   useEffect(() => {
-    setLogement(records.find((element) => element.id === id))
-  }, [id])
+    const logement_ = records.find((element) => element.id === id);
+    if (!logement_){
+      navigate("/logement-non-trouve")
+    }else {
+      setLogement(logement_)
+    }
+  }, [id, navigate])
 
   const slideLeft = () => {
     if (currentIndex === 0) {

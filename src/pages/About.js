@@ -4,6 +4,7 @@ import Banner from '../components/Banner'
 import Footer from "../components/Footer"
 import Main from "../components/Main"
 import Collapse from "../components/Collapse";
+import ImgBannerAbout from "../assets/imgBannerAbout.png"
 
 import "../styles/About.css"
 
@@ -17,7 +18,7 @@ function About() {
     <div>
       <Navbar />
       <Main>
-        <Banner />
+        <Banner img={ImgBannerAbout} />
         <div className='about'>
           <Collapse title="Fiabilité">{fiabilite}</Collapse>
           <Collapse title="Respect">{respect}</Collapse>
