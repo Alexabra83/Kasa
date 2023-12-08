@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import records from "../datas/logements.json"
 import "../styles/Logements.css"
 
-function Logements () {
+function Logements() {
   return (
     <div className="logements">
       {records.map((record) => {
@@ -12,7 +12,7 @@ function Logements () {
           <div className="logement" key={id}>
             <NavLink to={"/logement-details/" + id}>
               <img src={cover} alt={title} />
-              <h3>{title}</h3>
+              <figcaption><h3>{title}</h3></figcaption>
             </NavLink>
           </div>
         )

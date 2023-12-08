@@ -13,12 +13,12 @@ function Collapse({title, children}) {
   }
   return (
     <div className="collapse">
-      <header>
+      <header className='collapse-header'>
         <h3>{title}</h3>
         <button onClick={toggleCollapse}><FontAwesomeIcon icon={shouldShow ?faChevronUp: faChevronDown } /></button>
       </header>
       {shouldShow && (
-        <div className="">
+        <div className="collapse-content">
         {children}
       </div>
       )}

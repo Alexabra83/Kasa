@@ -8,7 +8,7 @@ function StarRating ({rating}){
       {
         ["","","","",""].map((_, index) => {
           if (index +1 <= rating ) {
-            return <FontAwesomeIcon icon={faStar} color="#FF0000"/>
+            return <FontAwesomeIcon icon={faStar} color="#FF6060"/>
           } else {
             return <FontAwesomeIcon icon={faStar} color="#F0F0F0"/>
           }

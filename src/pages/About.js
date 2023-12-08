@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar"
 import Banner from '../components/Banner'
 import Footer from "../components/Footer"
 import Main from "../components/Main"
+import Collapse from "../components/Collapse";
 
 import "../styles/About.css"
 
@@ -17,7 +18,13 @@ function About() {
       <Navbar />
       <Main>
         <Banner />
-        <h1>A propos</h1>
+        <div className='about'>
+          <Collapse title="Fiabilité">{fiabilite}</Collapse>
+          <Collapse title="Respect">{respect}</Collapse>
+          <Collapse title="Service">{service}</Collapse>
+          <Collapse title="Sécurité">{securite}</Collapse>
+        </div>
+
       </Main>
       <Footer />
     </div>

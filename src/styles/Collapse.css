@@ -1,0 +1,36 @@
+.collapse-header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    height: 28px;
+    background-color: #FF6060;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.collapse-content {
+	color: #FF6060;
+	padding:  20px 20px 20px 20px;
+	background-color: #f6f6f6;
+	border-radius: 10px;
+}
+
+.collapse {
+	border-radius: 10px;
+	display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.collapse button {
+    border: none;
+    background-color: transparent;
+    display: hidden;
+    color: White;
+    font-size: x-large;
+}
+

@@ -12,7 +12,6 @@ import Collapse from "../components/Collapse";
 import "../styles/LogementDetails.css"
 import Main from "../components/Main";
 
-
 function LogementDetails() {
   const { id } = useParams()
   const [logement, setLogement] = useState({
@@ -41,8 +40,6 @@ function LogementDetails() {
     }
   }
 
-
-
   return (
     <div className="logementdetail">
       <Navbar />
@@ -67,39 +64,37 @@ function LogementDetails() {
               })}
             </ul>
           </div>
+          <div className="host-star">
+            <div className="bloc-host">
+              <img alt="" src={logement.host.picture} />
+              <span >{logement.host.name}</span>
+            </div>
 
-          <div className="bloc-host">
-            <img alt="" src={logement.host.picture} />
-            <span >{logement.host.name}</span>
-          </div>
-
-          <div className="bloc-star">
-            <StarRating rating={logement.rating} />
+            <div className="bloc-star">
+              <StarRating rating={logement.rating} />
+            </div>
           </div>
         </div>
 
+        <div className="description-equipment">
+          <Collapse title="Description">Profitez du charme de la vie parisienne dans un magnifique appartement.
+            A 3 minutes à pied du Canl Saint Martin, vous serez proche des transports,
+            mais également de nombreux commerces. L'appartement est tout équipé,
+            et possède également un parking pour ceux qui souhaitent se déplacer en voiture.</Collapse>
 
-
-        <Collapse title="Description">Profitez du charme de la vie parisienne dans un magnifique appartement.
-          A 3 minutes à pied du Canl Saint Martin, vous serez proche des transports,
-          mais également de nombreux commerces. L'appartement est tout équipé,
-          et possède également un parking pour ceux qui souhaitent se déplacer en voiture.</Collapse>
-
-        <Collapse title="Equipements">
-          <ul>
-          {logement.equipments.map((equipment, i) => {
-            return (
-            <li key={i}>
-              {equipment}
-            </li>
-            )
-          })}
-          </ul>
-        </Collapse>
-
-        <div>
-          <p></p>
+          <Collapse title="Equipments">
+            <ul>
+              {logement.equipments.map((equipment, i) => {
+                return (
+                  <li key={i}>
+                    {equipment}
+                  </li>
+                )
+              })}
+            </ul>
+          </Collapse>
         </div>
+
       </Main>
       <Footer />
 

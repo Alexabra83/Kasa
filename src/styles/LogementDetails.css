@@ -28,7 +28,7 @@
 
 .chevronGauche {
   position: absolute;
-  font-size: 100px;
+  color: White;
   inset: 0;
   top: 40%;
   cursor: pointer;
@@ -37,7 +37,7 @@
 
 .chevronDroit {
   position: absolute;
-  font-size: 100px;
+  content: "";
   inset: 0;
   top: 40%;
   cursor: pointer;
@@ -45,15 +45,19 @@
 }
 
 .detail-header {
-  display: flex;
-  /*& > * {
-  border: 1px solid red;
-  }*/
+    display: flex;
+    justify-content: space-between;
 }
 
 .bloc-host {
-  margin-block: 0;
-  margin-left: auto;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 15px;
+  justify-content: center;
+  text-align: right;
+  width: 80%;
   color: #FF6060;
 }
 
@@ -63,9 +67,23 @@
 
 .bloc-star {
   display: flex;
-  font-size: 30px;
-  width: 130px;
+  flex-direction: row;
+  flex-wrap: nowrap;
   gap: 10px;
+}
+
+.host-star {
+  align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bloc-star {
+  display: flex;
+  gap: 10px;
+  color: #FF6060;
+  width: 167px;
 }
 
 .bloc-host img {
@@ -130,4 +148,14 @@
   height: 64px;
   border-radius: 50%;
   margin-top: 15px;
+}
+
+.description-equipment {
+  display: flex;
+  gap: 1rem;
+  list-style-type: none;
+}
+
+.description-equipment li {
+  list-style-type: none;
 }
