@@ -10,12 +10,14 @@
 }
 
 .error span {
-  font-size: 288px;
+  font-size: 250px;
+  font-weight: bold;
 }
 
 .error h4 {
   font-size: 36px;
-  margin: 30px 0;
+  margin: 30px;
+  margin-bottom: 150px;
 }
 
 .error a {
@@ -26,4 +28,15 @@
 
 .error p {
   padding-top: 50px;
+}
+
+@media (min-width: 401px) and (max-width: 550px) {
+  .error span { font-size: 180px; }
+}
+
+@media (max-width: 400px) {
+  .error {      margin: auto 0; }
+  .error span { font-size: 96px; }
+  .error h4 {   font-size: 18px;margin-bottom: 100px; }
+  .error a {    font-size: 14px;margin-bottom: 50px; }
 }

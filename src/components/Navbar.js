@@ -15,7 +15,7 @@ function Navbar() {
             <NavLink to="/" className="nav-link"><p>Acceuil</p></NavLink>
           </li>
           <li>
-            <NavLink to="/a-propos" className="nav-link"><p>A Propos</p></NavLink>
+            <NavLink to="/a-propos" className="nav-link"><p>À Propos</p></NavLink>
           </li>
         </ul>
     </header>

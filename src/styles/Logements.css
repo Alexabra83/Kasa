@@ -1,26 +1,28 @@
 .logements {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   grid-column-gap: 50px;
   grid-row-gap: 50px;
   justify-content: center;
   background: #F7F7F7;
-  border-radius: 25px;
+  border-radius: 1rem;
   margin-top: 40px;
   margin-bottom: 40px;
-  padding: 50px;
+  padding: 1rem;
+  width: 95%;
 }
 
 .logement {
   border-radius: 10px;
   transition: 0.3s;
-  min-width: 280px;
-  width: 100%;
-  padding-bottom: 10px;
+}
+.logement:hover{
+  transform: scale(1.03);
+  
 }
 
 .logement img {
-  width: 340px;
+  width: 100%;
   height: 340px;
   object-fit: cover;
   border-radius: 0.5rem;
@@ -40,10 +42,10 @@
 
 .logement figcaption {
   position: absolute;
-  left: -15px;
+  left: 0px;
   bottom: 0px;
   z-index: 1;
-  width: 110%;
+  width: 100%;
   height: 150px;
   background: rgb(0, 0, 0);
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 13%, rgba(0, 212, 255, 0) 70%);
@@ -59,3 +61,49 @@
   bottom: 0px;
 
 }
+
+@media (max-width: 768px){
+  .logements {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+    background: #FFF;
+    padding: 0;
+    grid-row-gap: 20px;
+    width: 100%;
+}
+
+.logement img {
+  height: 340px;
+}
+.logement-figure {
+  margin: 1rem 0.5rem;
+}
+}
+
+
+
+@media (max-width: 768px) {
+  .logements {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+      background: #FFF;
+      padding: 0;
+      grid-row-gap: 20px;
+  }
+  .logement {
+      min-width: 200px;
+      height: 255px;
+  }
+  .logement img { 
+      height: 255px; 
+  }
+}
+
+@media (max-width: 375px) {
+  .logement img{ 
+    height: 255px;
+  }
+  .logements {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      margin-top: 20px;
+      padding: 0;
+  }
+} 

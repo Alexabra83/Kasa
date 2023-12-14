@@ -1,5 +1,14 @@
 .star {
   margin-top: 10px;
   padding-right: 10px;
+  padding: 0 0.2rem 1rem 0;
   font-size: large;
+}
+
+@media (max-width: 450px) {
+  .star {
+    margin-top: 5px;
+    padding-right: 5px;
+    font-size: small;
+  }
 }

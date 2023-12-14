@@ -2,26 +2,26 @@
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
-    height: 28px;
+    height: 25px;
     background-color: #FF6060;
     color: white;
     font-size: 18px;
     padding: 10px 20px 10px 20px;
-    border-radius: 10px;
+    border-radius: 0.3rem;
     align-items: center;
     cursor: pointer;
 }
 
 .collapse-content {
-	color: #FF6060;
-	padding:  20px 20px 20px 20px;
-	background-color: #f6f6f6;
-	border-radius: 10px;
+    color: #FF6060;
+    padding: 20px 20px 20px 20px;
+    background-color: #f6f6f6;
+    border-radius: 10px;
 }
 
 .collapse {
-	border-radius: 10px;
-	display: flex;
+    border-radius: 10px;
+    display: flex;
     flex-direction: column;
     width: 100%;
 }
@@ -34,3 +34,16 @@
     font-size: x-large;
 }
 
+@media (max-width: 450px) {
+    .collapse-header {
+        font-size: 13px;
+        padding: 10px 10px 10px 10px;
+        
+    height: 15px;
+    }
+
+    .collapse-content {
+        font-size: 12px;
+    }
+
+}
