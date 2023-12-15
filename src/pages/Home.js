@@ -13,7 +13,7 @@ function Home() {
     <div>
       <Navbar />
       <Main>
-        <Banner title="Chez vous, partout et ailleurs" img={ImgBanner} />
+        <Banner title="Chez vous, partout et ailleurs" img={ImgBanner} /> {/* Charge l'image corespondant à la bannière d'acceuil*/}
         <Logements />
       </Main>
       <Footer />

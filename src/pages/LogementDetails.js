@@ -12,7 +12,7 @@ import "../styles/LogementDetails.css"
 import Main from "../components/Main";
 
 function LogementDetails() {
-  const navigate = useNavigate();
+  const navigate = useNavigate();// récupère l'ID de l'URL
   const { id } = useParams()
   const [logement, setLogement] = useState({
     pictures: [], host: {}, equipments: [], tags: []
@@ -21,13 +21,16 @@ function LogementDetails() {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   useEffect(() => {
-    const logement_ = records.find((element) => element.id === id);
+    const logement_ = records.find((element) => element.id === id);// cherche l'id dans le fichier logements.json
     if (!logement_){
       navigate("/logement-non-trouve")
     }else {
       setLogement(logement_)
     }
   }, [id, navigate])
+
+
+//Gestion des slides du carousel
 
   const slideLeft = () => {
     if (currentIndex === 0) {
@@ -49,14 +52,14 @@ function LogementDetails() {
     <div className="logementdetail">
       <Navbar />
       <Main>
-        <div className="carousel">
+        <div className="carousel">{/* carousel d'images */}
           <img className="img-cover" src={logement.pictures[currentIndex]} alt="" />
           <button className='chevronGauche' onClick={slideLeft}><FontAwesomeIcon icon={faChevronLeft} /></button>
           <button className='chevronDroit' onClick={slideRight}><FontAwesomeIcon icon={faChevronRight} /></button>
-          <p className="compteurImages">{currentIndex + 1} / {logement.pictures.length}</p>
+          <p className="compteurImages">{currentIndex + 1} / {logement.pictures.length}</p> {/* compteur d'images qui ne s'affiche qu'en version Desktop et lorsqu'il y a plusieurs images*/}
         </div>
 
-        <div className="detail-header">
+        <div className="detail-header">{/* 1 - affiche le titre, l'emplacement et les tags */}
           <div className="bloc-title">
             <h1>{logement.title}</h1>
 
@@ -69,19 +72,19 @@ function LogementDetails() {
               })}
             </ul>
           </div>
-          <div className="host-star">
+          <div className="host-star"> {/* 2 - Affiche le nom du propriétaireet sa photo */}
             <div className="bloc-host">
               <img alt="" src={logement.host.picture} />
               <span >{logement.host.name}</span>
             </div>
 
-            <div className="bloc-star">
+            <div className="bloc-star"> {/* étoiles évaluant le logement */}
               <StarRating rating={logement.rating} />
             </div>
           </div>
         </div>
 
-        <div className="description-equipment">
+        <div className="description-equipment"> {/* affiche la description et les équipements en collapse*/}
           <Collapse title="Description">Profitez du charme de la vie parisienne dans un magnifique appartement.
             A 3 minutes à pied du Canl Saint Martin, vous serez proche des transports,
             mais également de nombreux commerces. L'appartement est tout équipé,
