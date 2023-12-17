@@ -6,7 +6,7 @@ function StarRating({ rating }) {
   return (
     <div className="star-rating">
       {
-        ["", "", "", "", ""].map((_, index) => {
+        ["", "", "", "", ""].map((_, index) => {  //Affichage du nombres d'étoiles de chaque logement
           if (index + 1 <= rating) {
             return <FontAwesomeIcon icon={faStar} color="#FF6060" className="star" />
           } else {

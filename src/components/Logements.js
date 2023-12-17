@@ -10,7 +10,9 @@ function Logements() {
     <div className="logements"> {/* liste la base de données */}
       {records.map((record) => {
         const { id, cover, title } = record;
-        return (                              /*affiche la fiche logement sur la page d'accueil*/
+
+        /*affiche la fiche logement sur la page d'accueil*/
+        return (
           <div className="logement" key={id}>
             <NavLink to={"/logement-details/" + id}>
               <figure className='logement-figure'>

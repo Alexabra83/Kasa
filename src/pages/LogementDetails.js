@@ -23,14 +23,14 @@ function LogementDetails() {
   useEffect(() => {
     const logement_ = records.find((element) => element.id === id);// cherche l'id dans le fichier logements.json
     if (!logement_){
-      navigate("/logement-non-trouve")
+      navigate("/logement-non-trouve"); //conduit l'utilisateur vers la page d'erreur
     }else {
       setLogement(logement_)
     }
   }, [id, navigate])
 
 
-//Gestion des slides du carousel
+//Gestion des slides du carrousel
 
   const slideLeft = () => {
     if (currentIndex === 0) {
@@ -52,7 +52,7 @@ function LogementDetails() {
     <div className="logementdetail">
       <Navbar />
       <Main>
-        <div className="carousel">{/* carousel d'images */}
+        <div className="carousel">{/* carrousel d'images */}
           <img className="img-cover" src={logement.pictures[currentIndex]} alt="" />
           <button className='chevronGauche' onClick={slideLeft}><FontAwesomeIcon icon={faChevronLeft} /></button>
           <button className='chevronDroit' onClick={slideRight}><FontAwesomeIcon icon={faChevronRight} /></button>
