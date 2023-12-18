@@ -9,15 +9,14 @@ function Navbar() {
       <div className='navbar_logo'>
         <NavLink to="/"><img src={logo} alt='Kasa' /></NavLink>
       </div>
-      
-        <ul className="nav_list">
-          <li>
-            <NavLink to="/" className="nav-link"><p>Acceuil</p></NavLink> {/* Lien vers la page d'acceuil */}
-          </li>
-          <li>
-            <NavLink to="/a-propos" className="nav-link"><p>À Propos</p></NavLink> {/* Lien vers la page "A Propos" */}
-          </li>
-        </ul>
+      <ul className="nav_list">
+        <li>
+          <NavLink to="/" className="nav-link"><p>Acceuil</p></NavLink> {/* Lien vers la page d'acceuil */}
+        </li>
+        <li>
+          <NavLink to="/a-propos" className="nav-link"><p>À Propos</p></NavLink> {/* Lien vers la page "A Propos" */}
+        </li>
+      </ul>
     </header>
   )
 }

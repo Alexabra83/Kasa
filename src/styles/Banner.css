@@ -12,7 +12,8 @@
   background-size: 100%;
 }
 
-.banner img, .bannerfilter{
+.banner img,
+.bannerfilter {
   position: absolute;
   top: 0;
   left: 0;
@@ -23,11 +24,11 @@
 }
 
 .bannerfilter {
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
-.banner h1{
+.banner h1 {
   position: relative;
   font-size: 48px;
   z-index: 2;
@@ -35,8 +36,8 @@
 
 
 
-@media (max-width: 900px){
-  .banner h1{
+@media (max-width: 900px) {
+  .banner h1 {
     color: white;
     font-size: 28px;
     position: absolute;
@@ -52,15 +53,16 @@
 
 }
 
-@media (max-width: 375px){
+@media (max-width: 375px) {
   .banner h1 {
     color: white;
     font-size: 24px;
     position: absolute;
     z-index: 1;
   }
-  .banner img, .bannerfilter{
+
+  .banner img,
+  .bannerfilter {
     border-radius: 0.8rem;
   }
 }
-

@@ -12,10 +12,10 @@ img {
 }
 
 @media (max-width: 900px) {
-  body{
+  body {
     box-sizing: content-box;
-  margin: auto;
-  font-family: 'Montserrat', sans-serif;
-  padding-inline: 0px;
+    margin: auto;
+    font-family: 'Montserrat', sans-serif;
+    padding-inline: 0px;
   }
 }

@@ -37,8 +37,20 @@ img {
 }
 
 @media (max-width: 768px) {
-  .nav-link { text-transform: uppercase; padding: 0.2rem 0rem; }
-  .nav-link { font-size: 12px; }
-  .nav_list li {    gap: 10px; }
-  .nav_link {   justify-content: center;}
+  .nav-link {
+    text-transform: uppercase;
+    padding: 0.2rem 0rem;
+  }
+
+  .nav-link {
+    font-size: 12px;
+  }
+
+  .nav_list li {
+    gap: 10px;
+  }
+
+  .nav_link {
+    justify-content: center;
+  }
 }

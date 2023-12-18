@@ -31,12 +31,27 @@
 }
 
 @media (min-width: 401px) and (max-width: 550px) {
-  .error span { font-size: 180px; }
+  .error span {
+    font-size: 180px;
+  }
 }
 
 @media (max-width: 400px) {
-  .error {      margin: auto 0; }
-  .error span { font-size: 96px; }
-  .error h4 {   font-size: 18px;margin-bottom: 100px; }
-  .error a {    font-size: 14px;margin-bottom: 50px; }
+  .error {
+    margin: auto 0;
+  }
+
+  .error span {
+    font-size: 96px;
+  }
+
+  .error h4 {
+    font-size: 18px;
+    margin-bottom: 100px;
+  }
+
+  .error a {
+    font-size: 14px;
+    margin-bottom: 50px;
+  }
 }

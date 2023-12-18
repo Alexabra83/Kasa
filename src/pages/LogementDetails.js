@@ -9,15 +9,12 @@ import "../styles/LogementDetails.css"
 import Main from "../components/Main";
 import Gallery from "../components/Gallery";
 
-
 function LogementDetails() {
   const navigate = useNavigate();// récupère l'ID de l'URL
   const { id } = useParams()
   const [logement, setLogement] = useState({
     pictures: [], host: {}, equipments: [], tags: []
   })
-
-  
 
   useEffect(() => {
     const logement_ = records.find((element) => element.id === id);// cherche l'id dans le fichier logements.json
@@ -28,13 +25,11 @@ function LogementDetails() {
     }
   }, [id, navigate])
 
-
   return (
     <div className="logementdetail">
       <Navbar />
       <Main>
-        <Gallery logement={logement}/>
-
+        <Gallery logement={logement} />
         <div className="detail-header">{/* 1 - affiche le titre, l'emplacement et les tags */}
           <div className="bloc-title">
             <h1>{logement.title}</h1>
@@ -78,10 +73,8 @@ function LogementDetails() {
             </ul>
           </Collapse>
         </div>
-
       </Main>
       <Footer />
-
     </div>
   );
 }
