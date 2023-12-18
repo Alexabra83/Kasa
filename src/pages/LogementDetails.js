@@ -3,13 +3,12 @@ import Navbar from "../components/Navbar"
 import Footer from "../components/Footer";
 import records from "../datas/logements.json"
 import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import StarRating from "../components/StarRating";
 import Collapse from "../components/Collapse";
 import "../styles/LogementDetails.css"
 import Main from "../components/Main";
+import Gallery from "../components/Gallery";
+
 
 function LogementDetails() {
   const navigate = useNavigate();// récupère l'ID de l'URL
@@ -18,46 +17,23 @@ function LogementDetails() {
     pictures: [], host: {}, equipments: [], tags: []
   })
 
-  const [currentIndex, setCurrentIndex] = useState(0)
+  
 
   useEffect(() => {
     const logement_ = records.find((element) => element.id === id);// cherche l'id dans le fichier logements.json
-    if (!logement_){
+    if (!logement_) {
       navigate("/logement-non-trouve"); //conduit l'utilisateur vers la page d'erreur
-    }else {
+    } else {
       setLogement(logement_)
     }
   }, [id, navigate])
 
 
-//Gestion des slides du carrousel
-
-  const slideLeft = () => {
-    if (currentIndex === 0) {
-      setCurrentIndex(logement.pictures.length - 1)
-    } else {
-      setCurrentIndex(currentIndex - 1)
-    }
-  }
-
-  const slideRight = () => {
-    if (currentIndex === logement.pictures.length - 1) {
-      setCurrentIndex(0)
-    } else {
-      setCurrentIndex(currentIndex + 1)
-    }
-  }
-
   return (
     <div className="logementdetail">
       <Navbar />
       <Main>
-        <div className="carousel">{/* carrousel d'images */}
-          <img className="img-cover" src={logement.pictures[currentIndex]} alt="" />
-          <button className='chevronGauche' onClick={slideLeft}><FontAwesomeIcon icon={faChevronLeft} /></button>
-          <button className='chevronDroit' onClick={slideRight}><FontAwesomeIcon icon={faChevronRight} /></button>
-          <p className="compteurImages">{currentIndex + 1} / {logement.pictures.length}</p> {/* compteur d'images qui ne s'affiche qu'en version Desktop et lorsqu'il y a plusieurs images*/}
-        </div>
+        <Gallery logement={logement}/>
 
         <div className="detail-header">{/* 1 - affiche le titre, l'emplacement et les tags */}
           <div className="bloc-title">

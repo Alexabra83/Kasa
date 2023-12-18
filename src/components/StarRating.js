@@ -8,9 +8,9 @@ function StarRating({ rating }) {
       {
         ["", "", "", "", ""].map((_, index) => {  //Affichage du nombres d'étoiles de chaque logement
           if (index + 1 <= rating) {
-            return <FontAwesomeIcon icon={faStar} color="#FF6060" className="star" />
+            return <FontAwesomeIcon icon={faStar} key={index} color="#FF6060" className="star" />
           } else {
-            return <FontAwesomeIcon icon={faStar} color="#F0F0F0" className="star" />
+            return <FontAwesomeIcon icon={faStar} key={index} color="#F0F0F0" className="star" />
           }
         })
       }
