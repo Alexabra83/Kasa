@@ -54,3 +54,9 @@ img {
     justify-content: center;
   }
 }
+
+@media (max-width: 400px) {
+  img {
+    width: 7rem;
+  }
+}
